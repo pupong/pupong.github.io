@@ -1,33 +1,19 @@
-name: Pages
-
+name: Build and Deploy
 on:
-  push:
-    branches:
-      - master  # default branch
-
+  push:	
+    branches:	
+      - master
 jobs:
-  pages:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.hexo_token }}
-          publish_dir: ./
-          publish_branch: gh-pages  # deploying branch
+    - name: Checkout
+      uses: actions/checkout@hexo-page
+
+    - name: Build and Deploy
+      uses: y4code/hexo-deploy-action@hexo-page
+      env:
+        PERSONAL_TOKEN: ${{ secrets.hexo_token }}
+        PUBLISH_REPOSITORY: pupong/pupong.github.io # The repository the action should deploy to.
+        BRANCH: gh-pages  # The branch the action should deploy to.
+        PUBLISH_DIR: ./ # The folder the action should deploy.
