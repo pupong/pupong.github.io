@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@hexo-page
+      uses: actions/checkout@master
 
     - name: Build and Deploy
-      uses: y4code/hexo-deploy-action@hexo-page
+      uses: y4code/hexo-deploy-action@master
       env:
         PERSONAL_TOKEN: ${{ secrets.hexo_token }}
         PUBLISH_REPOSITORY: pupong/pupong.github.io # The repository the action should deploy to.
