@@ -8,7 +8,7 @@ subtitle: '君自故乡来，应知故乡事'
 description: ''
 keywords:
 author: 
-language: cn
+language: zh-Hans
 timezone: ''
 
 # URL
@@ -105,5 +105,4 @@ theme: hueman
 deploy:
   type: git
   repo: https://pupong:gNwQAmR9@github.com/pupong/pupong.github.io 
-  branch: [master]
-  message: [message]
+  branch: gh-pages
