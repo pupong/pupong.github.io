@@ -3,7 +3,7 @@ name: Pages
 on:
   push:
     branches:
-      - source  # default branch
+      - master  # default branch
 
 jobs:
   pages:
@@ -29,5 +29,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: master  # deploying branch
+          publish_dir: ./
+          publish_branch: gh-pages  # deploying branch
