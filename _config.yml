@@ -104,5 +104,5 @@ theme: hueman
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://pupong:gNwQAmR9@github.com/pupong/pupong.github.io 
+  repo: https://github.com/pupong/pupong.github.io 
   branch: gh-pages
